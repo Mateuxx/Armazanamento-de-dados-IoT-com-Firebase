@@ -1,6 +1,7 @@
 from pyLoraRFM9x import LoRa, ModemConfig
 import time
 from alimentandofirebase import*
+from testesprorasp import *
 # This is our callback function that runs when a message is received
 def on_recv(payload):
     print("From:", payload.header_from)
@@ -12,16 +13,19 @@ def on_recv(payload):
     arrayData = dados.split(';')
     
     #Percorrer o array de dados e apenas pegar os numeros, removendo as strings
-    for x in range(0,4):
+    for x in range(0,len(arrayData)):
         arrayData[x] = arrayData[x][2:]
+        if x == len(arrayData) - 1:
+            arrayData[x] = arrayData[x][:-1]
         print(arrayData[x])
     print(arrayData)
     
     
-    arrayNomes = ['Turbidez', 'Ph', 'Temperatura','TDS']
+    arrayNomes = ['Turbidez', 'PH', 'Temperatura','TDS']
     for i in range(0,4):
        feedFb(arrayNomes[i],arrayData[i])
-               
+       insert('PAI',arrayNomes[i],arrayData[i])
+       feedFbLastRecord('PAI')        
     
     print(len(payload.message))
     print("RSSI: {}; SNR: {}".format(payload.rssi, payload.snr))
@@ -32,6 +36,8 @@ lora = LoRa(0, 1, 5, 2, reset_pin = 25, freq=915, tx_power=20,
       modem_config=ModemConfig.Bw125Cr45Sf128, acks=True, crypto=None)
 lora.on_recv = on_recv
 print("inicio")
+print("inicio do banco")
+create_table()
 # Send a message to a recipient device with address 10
 # Retry sending the message twice if we don't get an  acknowledgment from the recipient
 while(1):
