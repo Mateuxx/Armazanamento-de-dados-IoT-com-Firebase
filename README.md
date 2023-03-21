@@ -32,9 +32,21 @@ Após a inserção no banco, Para facilitar a inserção da ultima marcação do
       | — — Last Record (PH, TDS, Temperatura, Turbidez) 
       | — — Sensor
                   | — — PH
+                              | — — Leitura 1 
+                              | — — …..
+                              | — — Leitura N
                   | — — TDS
+                              | — — Leitura 1 
+                              | — — …..
+                              | — — Leitura N
                   | — — Temperatura
+                              | — — Leitura 1 
+                              | — — …..
+                              | — — Leitura N
                   | — —  Turbidez
+                              | — — Leitura 1 
+                              | — — …..
+                              | — — Leitura N
 ```
  
 # Diagrama de funcionamento Geral (Firebase) 
