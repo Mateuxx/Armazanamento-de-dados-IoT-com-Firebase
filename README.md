@@ -10,6 +10,8 @@ Este projeto tem como objetivo a criação de um protótipo utilizando arduino e
 
 Arquitetura básica do projeto: 
 
+![image](https://user-images.githubusercontent.com/83120884/226697851-d4be8f0a-fc4d-4b7d-ba6f-67f96fed112e.png)
+
 
 Script em python que recebe dados de um Gateway, no caso deste projeto o gateway é um ps
 
