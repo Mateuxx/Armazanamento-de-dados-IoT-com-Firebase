@@ -1,4 +1,4 @@
-# Firebase Em Aplicação IoT
+# Monitoramento remoto da qualidade da água: Armazenamento e recuperação de dados IoT em nuvem.
 
 ## O Projeto
 
