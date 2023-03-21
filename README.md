@@ -15,9 +15,26 @@ Arquitetura básica do projeto:
 ## Authors
 
 - [@diogosm](https://www.github.com/diogosm)
--  [@Mateuxx](https://github.com/Mateuxx)
+- [@Mateuxx](https://github.com/Mateuxx)
 
+## Firebase Para Armazanenameto Dados
 
-Script em python que recebe dados de um Gateway, no caso deste projeto o gateway é um ps
+Como Data server foi optado por esse projeto o Firebase, pela sua facilidade de integração com app android e até certa facilidade de integração com aplicações web. 
+
+Os dados são captados pelos sensores ( neste projeto são utilizados os sensores de: temperatura, turbidez,  PH e condutividade) enviados para o Raspberry Pi e Lora(Gateway). Com isso os dados são tratados por meio de um script em python que armazena esses dados em um banco utilizando o SQLITE3  para facilitação de formatação dos dados ao alimentar o RealTime Database.
+
+Após a inserção no banco, Para facilitar a inserção da ultima marcação dos sensores (last Record) no firebase os dados são enviados ao Realtime database que possui a seguinte Estrutura :
+
+## Estrutura do Realtime Firebase
+
+| — - PAi 
+      | — — Last Record (PH, TDS, Temperatura, Turbidez) 
+      | — — Sensor
+                  | — — PH
+                  | — — TDS
+                  | — — Temperatura
+                  | — —  Turbidez
+ 
+# Diagrama de funcionamento Geral (Firebase) 
 
 ![testeee (1)](https://user-images.githubusercontent.com/83120884/226636490-24541005-9e21-4964-be33-fd47dcbfef80.jpg)
