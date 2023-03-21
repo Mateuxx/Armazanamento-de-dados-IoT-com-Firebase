@@ -26,6 +26,7 @@ Os dados são captados pelos sensores ( neste projeto são utilizados os sensore
 Após a inserção no banco, Para facilitar a inserção da ultima marcação dos sensores (last Record) no firebase os dados são enviados ao Realtime database que possui a seguinte Estrutura :
 
 ## Estrutura do Realtime Firebase
+```
 
 | — - PAi 
       | — — Last Record (PH, TDS, Temperatura, Turbidez) 
@@ -34,6 +35,7 @@ Após a inserção no banco, Para facilitar a inserção da ultima marcação do
                   | — — TDS
                   | — — Temperatura
                   | — —  Turbidez
+```
  
 # Diagrama de funcionamento Geral (Firebase) 
 
